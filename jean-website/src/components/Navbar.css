@@ -1,0 +1,88 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* left logo, right menu */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 0 20px;
+    background-color: #F9F7F0;
+    z-index: 1000;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    background: rgb(255, 255, 255);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
+.logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-right: 20px;
+    width: 5vw;
+}
+
+.logo img {
+    width: 5vw;
+    min-width: 50px;
+    max-width:65px;
+    border-radius: 50%
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4; /* spacing for the two lines */
+    justify-content: center;
+}
+
+.logo-name {
+    font-family: 'Cormorant Garamond', serif; /* App Secondary */
+    font-size: 1.2rem; /* adjust as needed */
+    color: #8F242D;
+}
+
+.logo-title {
+    font-family: 'Crimson Text', serif; /* App font */
+    font-size: 0.9rem; /* smaller than name */
+    color: #847062;
+}
+
+.nav-list {
+    width: 70%;
+    display: flex;
+    align-items: left;
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 3vw;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-list li a:hover {
+    color: grey;
+}
+
+.profile-img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    align-items: center;
+    margin-top: 20px;
+}

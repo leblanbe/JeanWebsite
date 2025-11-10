@@ -1,0 +1,86 @@
+.section.background {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70vh;                  
+    padding-top: 80px;
+    padding-left: 50px;
+    background-color: #EAE3D7;
+    overflow: hidden;
+}
+
+/* Fade overlay: image -> white from right to left */
+.section.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%);
+    z-index: 1;
+}
+
+.firsthalf {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Main title styling */
+.home-title {
+    font-family: 'Cormorant Garamond', serif; /* App Secondary */
+    font-size: 2.5rem;                        /* adjust as needed */
+    color: #8F242D;
+    margin: 0;
+}
+
+/* Body text styling */
+.home-body {
+    font-family: 'Crimson Text', serif;       /* App font */
+    color: #2E251F;
+    font-size: 1.1rem;
+    line-height: 1.6;                         /* good readability */
+    margin-top: 15px;
+}
+
+/* Blog button */
+.btn-blog {
+    display: inline-block;
+    margin-top: 25px;
+    margin-right: 20px;
+    padding: 12px 15px;
+    background-color: #8F242D; /* Sage Green */
+    color: white;
+    font-size: 1rem;
+    font-family:  'Crimson Text', serif;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    text-align: center;
+}
+
+.btn-blog:hover {
+    background-color: white;
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 15px;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Crimson Text', serif;
+    border: 1px solid #DDD5C6;  /* <-- this sets color and width together */
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    text-align: center;
+}

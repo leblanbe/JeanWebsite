@@ -1,0 +1,66 @@
+
+.box-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    max-width: 90%;
+    margin: auto;
+    height: 80%;
+    gap: 50px;
+    z-index: 2;
+}
+
+.firsthalf {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left; 
+    margin-left: 5vw;
+    z-index: 2;
+}
+
+.secondhalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* horizontally centers the image inside the column */
+}
+
+.text-big {
+    font-weight: 500;
+    font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 30px;
+}
+
+.text-medium {
+  font-size: 25px;
+  font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+}
+
+.text-small {
+    font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 18px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 250, 250)
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  text-align: center;       /* centers text inside */
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+}
+
+.center-text h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}

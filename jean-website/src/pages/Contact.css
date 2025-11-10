@@ -1,0 +1,57 @@
+.section.contact-background {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    color: black;
+    overflow: hidden;
+}
+
+.secondhalf {
+    width: 50%;
+    display: flex;
+    justify-content: center;  /* centers the contact box */
+    align-items: center;
+}
+
+.contact-box {
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+}
+
+.contact-header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: inherit;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contact-box textarea {
+    resize: none;
+}
+
+.btn-send {
+    width: 100%;
+    padding: 12px;
+    background-color: #ADB9AD; /* Sage Green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+    background-color: #97a994;
+}
