@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 70vh;                  
+    height: 80vh;                  
     padding-top: 80px;
     padding-left: 50px;
     background-color: #EAE3D7;
@@ -29,10 +29,26 @@
     z-index: 2;
 }
 
+.secondhalf {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.first34 {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
 /* Main title styling */
 .home-title {
     font-family: 'Cormorant Garamond', serif; /* App Secondary */
-    font-size: 2.5rem;                        /* adjust as needed */
+    font-size: 4.5rem;                        /* adjust as needed */
     color: #8F242D;
     margin: 0;
 }
@@ -83,4 +99,53 @@
     transition: background-color 0.3s ease;
     width: auto;
     text-align: center;
+}
+
+.center-text.about-section {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  text-align: center;        /* centers text inside */
+  width: 100%;
+  padding: 40px 20px 0px;        /* spacing top and bottom */
+  background-color: #ffffff; /* white background instead of black for readability */
+}
+
+/* Main header */
+.about-title {
+  font-family: 'Cormorant Garamond', serif; /* App Secondary */
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000000;
+  margin: 0;
+}
+
+/* Subtitle / small text */
+.about-subtitle {
+  font-family: 'Crimson Text', serif; /* App font */
+  font-size: 1.1rem;
+  color: #847062;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.katherine-img {
+  width: 30vw;
+}
+
+.section-about {
+    display: flex;               /* make children sit side by side */
+    flex-direction: row;         /* horizontal alignment */
+    justify-content: space-between; /* optional: spread out */
+    align-items: flex-start;     /* align to top of container */
+    padding: 50px;               /* optional spacing */
+    gap: 40px;                   /* space between text and image */
+    align-items: center;
+}
+
+.section-about .firsthalf,
+.section-about .secondhalf {
+    flex: 1;                     /* each takes half the width */
+    display: flex;
+    flex-direction: column;
 }

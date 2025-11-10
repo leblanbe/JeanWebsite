@@ -20,24 +20,19 @@
     background-size: cover;
 }
 
-.logo {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-right: 20px;
-    width: 5vw;
-}
-
-.logo img {
-    width: 5vw;
-    min-width: 50px;
-    max-width:65px;
-    border-radius: 50%
+.logo-img {
+    width: 60px;          /* fixed width */
+    height: 60px;         /* same as width for circle */
+    min-width: 50px;      /* optional for small screens */
+    max-width: 65px;      /* optional for large screens */
+    border-radius: 50%;   /* makes it circular */
+    object-fit: cover;    /* prevents distortion */
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 15px; /* space between logo and text */
 }
 
 .logo-text {
