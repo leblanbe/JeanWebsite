@@ -105,18 +105,23 @@
 /* Article grid */
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px 50px;
+  grid-template-columns: repeat(auto-fit, 30vw); /* fixed card width */
+  gap: 30px;                  /* space between cards */
+  padding: 10px 20px;
+  justify-content: start;      /* align grid to the left */
 }
 
+/* Each article card */
 .article-card {
+  width: 30vw;                /* fixed width */
   background-color: #f9f7f0;
   padding: 20px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 2px solid var(--text-color);
+  box-sizing: border-box;
 }
 
 .article-meta {
@@ -126,11 +131,11 @@
 
 .article-title {
   font-family: 'Cormorant Garamond', serif;
+  font-weight:100;
   font-size: 1.5rem;
-  color: var(--primary-color);
 }
 
 .article-summary {
   font-family: 'Crimson Text', serif;
-  color: #2E251F;
+  color: var(--text-color);
 }
