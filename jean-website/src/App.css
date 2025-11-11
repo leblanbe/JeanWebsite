@@ -30,17 +30,17 @@
 
 .text-big {
     font-weight: 500;
-    font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
 }
 
-.text-medium {
-  font-size: 25px;
-  font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+.h1-medium {
+  font-size: 20px;
+  font-family:  'Cormorant Garamond', serif;
 }
 
 .text-small {
-    font-family: "Palatino", "PT Serif", "Palatino Linotype", "Book Antiqua", serif;
+   font-family: 'Crimson Text', serif;
     font-size: 18px;
 }
 

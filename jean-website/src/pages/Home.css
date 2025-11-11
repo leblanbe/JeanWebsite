@@ -60,6 +60,7 @@
     font-size: 1.1rem;
     line-height: 1.6;                         /* good readability */
     margin-top: 15px;
+    margin-right: 40px;
 }
 
 /* Blog button */
@@ -101,7 +102,7 @@
     text-align: center;
 }
 
-.center-text.about-section {
+.center-text {
   display: flex;
   justify-content: center;   /* centers horizontally */
   align-items: center;       /* centers vertically */
@@ -148,4 +149,69 @@
     flex: 1;                     /* each takes half the width */
     display: flex;
     flex-direction: column;
+}
+
+.section-contact {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #8F242D;      /* dark red background */
+    display: flex;
+    flex-direction: column;         /* stack items vertically */
+    justify-content: center;        /* vertical centering */
+    align-items: center;            /* horizontal centering */
+    text-align: center;             /* center text inside each element */
+    width: 100%;
+    min-height: 50vh;               /* adjust height as needed */
+    padding: 40px 20px;             /* spacing around content */
+    gap: 20px;                      /* space between heading and paragraph */
+    color: white;                   /* default text color */
+    font-size: 1.5rem;
+}
+
+.white{
+  color: white;
+}
+
+.tan{
+  background-color: #E9C696;
+}
+
+.section-footer{
+  font-family: 'Crimson Text', serif; /* App font */
+  font-size: 1.1rem;
+  padding: 30px 30px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  margin-top: 20px;
+  margin-left: 20px;         /* distance from logo */
+  width: fit-content;        /* box hugs the icon */
+}
+
+.social-media-icon {
+  width: 1.6vw;
+  height: 1.6vw;
+  margin-right: 10px;
+}
+
+.vertical-list{
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  text-align: left;         /* left-align text inside */
+  padding: 30px 20px;
+  text-decoration: none;
+  color:#3f332b
+}
+
+.vertical-list a {
+  text-decoration: none;  /* removes underline */
+  color: inherit;         /* makes links use surrounding text color */
+}
+
+.vertical-list-item{
+  margin-top: 10px;
+  margin-left: 10px;
+  color:#847062;
+  font-size: 1rem;
 }

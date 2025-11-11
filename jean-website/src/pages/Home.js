@@ -3,7 +3,11 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import '../App.css';
+import '../components/Navbar.css';
 import PlayImage from '../assets/gentlekatherine.png';
+import logo from '../assets/websitelogo.png';
+import linkedin from '../assets/linkedin.png';
+import facebook from '../assets/facebook.png';
 
 function Home() {
   return (
@@ -30,7 +34,7 @@ function Home() {
           {/* Optionally add an image or illustration here */}
         </div>
       </section>
-      <section className="center-text about-section">
+      <section className="center-text">
       <div>
         <h1 className="about-title">About Jean Feerick</h1>
         <p className="about-subtitle">
@@ -54,6 +58,78 @@ function Home() {
       <div className="secondhalf">
             <img src={PlayImage} className="katherine-img" />
       </div>
+    </section>
+    <section className="section-contact">
+        <h1 className="contact-title">Join the Conversation</h1>
+        <p className="home-body white"> Whether you're a theater professional, literary scholar, student, or simply an admirer of Shakespeare's work, I'd love to hear from you. Reach out to discuss collaborations, inquiries, or share your own insights.</p>
+        <div className="home-buttons">
+          <Link to="/contact" className="btn-contact tan">
+              Contact Jean Feerick
+          </Link>
+        </div>
+    </section>
+    <section className = "section-footer">
+        <div className="logo-container">
+        <img src={logo} alt="Logo" className="logo-img" />
+        <div className="logo-text">
+        <div className="logo-name">Jean Feerick</div>
+        <div className="logo-title">Shakespearean Scholar</div>
+        </div>
+        </div>
+        <section className = "social-media"> 
+          <a 
+            href="https://www.linkedin.com/in/jean-feerick-60313049/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <img src={linkedin} alt="LinkedIn" className="social-media-icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/jean.feerick.98" 
+            target="_blank" 
+            rel="noopener noreferrer">
+              <img src={facebook} alt="facebook" className= "social-media-icon" />
+            </a>
+        </section>
+        <section className = "vertical-list">
+          
+          <div className = "h1-medium">Quick Links</div> 
+          
+          <div className = "vertical-list-item">
+          <div><Link to="/">Home</Link></div>
+          </div>
+          <div className = "vertical-list-item">
+          <div><Link to="/about">About</Link></div>
+          </div>
+          <div className = "vertical-list-item">
+          <div><Link to="/blog">Blog</Link></div>
+          </div>
+          <div className = "vertical-list-item">
+          <div><Link to="/contact">Contact</Link></div>
+          </div>
+        </section>
+        <section className = "vertical-list">
+          
+          <div className = "h1-medium">Resources</div> 
+          
+          <div className = "vertical-list-item">
+            <a
+            href="https://www.folger.edu/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+              Folger Shakespeare Library
+            </a>
+          </div>
+          <div className = "vertical-list-item">
+          <a
+            href="https://www.shakespearesglobe.com/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+              Shakespeare's Globe
+            </a>
+          </div>
+        </section>
+
     </section>
     </>
   );
