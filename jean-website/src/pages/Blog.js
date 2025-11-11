@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import Navbar from '../components/Navbar';
 import './Blog.css';
 import '../App.css';
@@ -26,12 +26,16 @@ const initialArticles = [
 ];
 
 function Blog({ loggedInUser }) {
-  const [articles, setArticles] = useState(initialArticles);
+  // Load from localStorage if available
+  const [articles, setArticles] = useState(() => {
+    const saved = localStorage.getItem('articles');
+    return saved ? JSON.parse(saved) : initialArticles;
+  });
+
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('');
   const [filterAuthor, setFilterAuthor] = useState('');
   const [filterDate, setFilterDate] = useState('');
-
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [newArticle, setNewArticle] = useState({
     type: '',
@@ -42,6 +46,12 @@ function Blog({ loggedInUser }) {
     date: ''
   });
 
+  // Save to localStorage whenever articles change
+  useEffect(() => {
+    localStorage.setItem('articles', JSON.stringify(articles));
+  }, [articles]);
+
+  // Filtered articles
   const filteredArticles = articles.filter(article => {
     return (
       article.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -55,11 +65,13 @@ function Blog({ loggedInUser }) {
   const uniqueTypes = [...new Set(articles.map(a => a.type))];
   const uniqueDates = [...new Set(articles.map(a => a.date))];
 
+  // Handle input change in create form
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewArticle(prev => ({ ...prev, [name]: value }));
   };
 
+  // Create a new article
   const handleCreateArticle = (e) => {
     e.preventDefault();
     if (!newArticle.title || !newArticle.summary || !newArticle.type || !newArticle.author || !newArticle.date) {
@@ -80,6 +92,7 @@ function Blog({ loggedInUser }) {
     setNewArticle({ type: '', title: '', summary: '', link: '', author: '', date: '' });
   };
 
+  // Delete article
   const handleDeleteArticle = (id) => {
     if (window.confirm("Are you sure you want to delete this review?")) {
       setArticles(prev => prev.filter(article => article.id !== id));
