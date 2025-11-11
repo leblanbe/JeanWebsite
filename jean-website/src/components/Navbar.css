@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     justify-content: space-between; /* left logo, right menu */
-    align-items: center;
     top: 0;
     padding: 0 20px;
     background-color: #F9F7F0;
@@ -44,7 +43,7 @@
 .logo-name {
     font-family: 'Cormorant Garamond', serif; /* App Secondary */
     font-size: 1.2rem; /* adjust as needed */
-    color: #8F242D;
+    color: var(--primary-color);
 }
 
 .logo-title {
@@ -54,14 +53,16 @@
 }
 
 .nav-list {
-    width: 70%;
     display: flex;
-    align-items: left;
+    justify-content: flex-end; /* pushes list to the right */
+    align-items: center;       /* centers vertically */
+    gap: 1vw;                  /* adds space between items */
+    margin-right: 20px;        /* optional: adds spacing from edge */
 }
 
 .nav-list li {
     list-style: none;
-    padding: 3vw;
+    padding: 1vw;
 }
 
 .nav-list li a {
@@ -79,4 +80,74 @@
     height: auto;
     align-items: center;
     margin-top: 20px;
+}
+
+.login-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #6d1a21;
+}
+
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.login-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.login-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.login-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-content button {
+  background-color: #8F242D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: #333;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

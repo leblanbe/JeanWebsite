@@ -1,11 +1,14 @@
 .section.background {
-    position: relative;
+  position: relative;
     display: flex;
     align-items: center;
     height: 80vh;                  
     padding-top: 80px;
     padding-left: 50px;
-    background-color: #EAE3D7;
+    background-image: url('../assets/vintage-paper-flowers.png'); /* relative path from CSS file */
+    background-size: cover;      /* cover the entire section */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -17,7 +20,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to top, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to left, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%);
     z-index: 1;
 }
 
@@ -49,7 +52,7 @@
 .home-title {
     font-family: 'Cormorant Garamond', serif; /* App Secondary */
     font-size: 4.5rem;                        /* adjust as needed */
-    color: #8F242D;
+    color: var(--primary-color);
     margin: 0;
 }
 
@@ -69,7 +72,7 @@
     margin-top: 25px;
     margin-right: 20px;
     padding: 12px 15px;
-    background-color: #8F242D; /* Sage Green */
+    background-color: var(--primary-color); /* Sage Green */
     color: white;
     font-size: 1rem;
     font-family:  'Crimson Text', serif;
@@ -153,16 +156,17 @@
 
 .section-contact {
     font-family: 'Cormorant Garamond', serif;
-    background-color: #8F242D;      /* dark red background */
+    background-color: var(--primary-color);      /* dark red background */
     display: flex;
     flex-direction: column;         /* stack items vertically */
     justify-content: center;        /* vertical centering */
     align-items: center;            /* horizontal centering */
     text-align: center;             /* center text inside each element */
     width: 100%;
-    min-height: 50vh;               /* adjust height as needed */
-    padding: 40px 20px;             /* spacing around content */
-    gap: 20px;                      /* space between heading and paragraph */
+    min-height: 40vh;               /* adjust height as needed */
+    padding-left:30px;             /* spacing around content *
+    padding-bottom: 20px;
+    gap: 10px;                      /* space between heading and paragraph */
     color: white;                   /* default text color */
     font-size: 1.5rem;
 }
@@ -172,7 +176,7 @@
 }
 
 .tan{
-  background-color: #E9C696;
+  background-color: var(--light-color);
 }
 
 .section-footer{

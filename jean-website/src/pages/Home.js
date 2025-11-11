@@ -12,7 +12,6 @@ import facebook from '../assets/facebook.png';
 function Home() {
   return (
     <>
-      <Navbar />
       <section className="section background">
         <div className="first34">
           <h1 className="home-title">

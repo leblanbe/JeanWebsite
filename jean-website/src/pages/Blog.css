@@ -1,0 +1,136 @@
+.create-review-container {
+  margin-bottom: 20px;
+}
+
+.create-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.create-review-form input,
+.create-review-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+}
+
+.create-review-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Full-width controls */
+.blog-controls-fullwidth {
+  display: flex;
+  justify-content: space-between; /* space between search, filters, and create review */
+  align-items: center;
+  width: 100%;
+  padding: 20px 50px; /* spacing from edges */
+  box-sizing: border-box;
+  gap: 20px;
+  flex-wrap: wrap; /* optional: wrap on smaller screens */
+}
+
+/* Full-width search bar */
+.search-bar-fullwidth {
+  flex: 1; /* takes remaining space */
+  min-width: 200px;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Filters on the right */
+.filters-fullwidth {
+  display: flex;
+  gap: 10px;
+}
+
+.filters-fullwidth button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.filters-fullwidth button:hover {
+  background-color:var(--primary-color);
+}
+
+/* Create review button */
+.btn-blog {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn-blog:hover {
+  background-color: var(--primary-color);
+}
+
+
+/* Filter buttons */
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.filters button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Article grid */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 50px;
+}
+
+.article-card {
+  background-color: #f9f7f0;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article-meta {
+  font-size: 0.9rem;
+  color: #847062;
+}
+
+.article-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.article-summary {
+  font-family: 'Crimson Text', serif;
+  color: #2E251F;
+}
