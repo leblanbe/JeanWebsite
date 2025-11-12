@@ -6,9 +6,6 @@ import './Home.css';
 import '../App.css';
 import '../components/Navbar.css';
 import PlayImage from '../assets/gentlekatherine.png';
-import logo from '../assets/websitelogo.png';
-import linkedin from '../assets/linkedin.png';
-import facebook from '../assets/facebook.png';
 
 function Home() {
   return (
@@ -58,15 +55,6 @@ function Home() {
       <div className="secondhalf">
             <img src={PlayImage} className="katherine-img" />
       </div>
-    </section>
-    <section className="section-contact">
-        <h1 className="contact-title">Join the Conversation</h1>
-        <p className="home-body white"> Whether you're a theater professional, literary scholar, student, or simply an admirer of Shakespeare's work, I'd love to hear from you. Reach out to discuss collaborations, inquiries, or share your own insights.</p>
-        <div className="home-buttons">
-          <Link to="/contact" className="btn-contact tan">
-              Contact Jean Feerick
-          </Link>
-        </div>
     </section>
     <Footer />
     </>

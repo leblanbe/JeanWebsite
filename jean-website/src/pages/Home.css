@@ -96,7 +96,7 @@
     color: black;
     font-size: 1rem;
     font-family: 'Crimson Text', serif;
-    border: 1px solid #DDD5C6;  /* <-- this sets color and width together */
+    border: 1px solid var(--primary-color);  /* <-- this sets color and width together */
     border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
@@ -112,7 +112,7 @@
   text-align: center;        /* centers text inside */
   width: 100%;
   padding: 40px 20px 0px;        /* spacing top and bottom */
-  background-color: #ffffff; /* white background instead of black for readability */
+  background-color: var(--light-color); /* white background instead of black for readability */
 }
 
 /* Main header */
@@ -142,9 +142,11 @@
     flex-direction: row;         /* horizontal alignment */
     justify-content: space-between; /* optional: spread out */
     align-items: flex-start;     /* align to top of container */
-    padding: 50px;               /* optional spacing */
+    padding-bottom: 100px;           /* optional spacing */
     gap: 40px;                   /* space between text and image */
     align-items: center;
+    background-color: var(--light-color);
+    
 }
 
 .section-about .firsthalf,
@@ -154,22 +156,6 @@
     flex-direction: column;
 }
 
-.section-contact {
-    font-family: 'Cormorant Garamond', serif;
-    background-color: var(--primary-color);      /* dark red background */
-    display: flex;
-    flex-direction: column;         /* stack items vertically */
-    justify-content: center;        /* vertical centering */
-    align-items: center;            /* horizontal centering */
-    text-align: center;             /* center text inside each element */
-    width: 100%;
-    min-height: 40vh;               /* adjust height as needed */
-    padding-left:30px;             /* spacing around content *
-    padding-bottom: 20px;
-    gap: 10px;                      /* space between heading and paragraph */
-    color: white;                   /* default text color */
-    font-size: 1.5rem;
-}
 
 .white{
   color: white;
@@ -177,4 +163,9 @@
 
 .tan{
   background-color: var(--light-color);
+}
+
+.primary{
+  background-color: var(--primary-color);
+  color: var(--light-color);
 }

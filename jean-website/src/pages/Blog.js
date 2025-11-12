@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 import './Blog.css';
 import '../App.css';
 
@@ -102,6 +103,16 @@ function Blog({ loggedInUser }) {
 
   return (
     <>
+    <section className="section-contact">
+        <h1 className="contact-title">Join the Conversation</h1>
+        <p className="home-body white"> Whether you're a theater professional, literary scholar, student, or simply an admirer of Shakespeare's work, I'd love to hear from you. Reach out to discuss collaborations, inquiries, or share your own insights.</p>
+        <div className="home-buttons">
+          <Link to="/contact" className="btn-contact">
+              Contact Jean Feerick
+          </Link>
+        </div>
+    </section>
+
     <section className="center-text">
         <h1 className="h1-medium">Articles & Insights</h1>
         <p className="text-small"> Explore a curated collection of scholarly articles and theatrical insights delving into the works of William Shakespeare. From character analysis to performance interpretation, discover new perspectives on the Bard's timeless legacy.</p>
@@ -200,7 +211,7 @@ function Blog({ loggedInUser }) {
               <button 
                 className="btn-blog delete-btn" 
                 onClick={() => handleDeleteArticle(article.id)}
-                style={{ marginTop: '10px', backgroundColor: '#70ab7d' }}
+                style={{ marginTop: '10px', backgroundColor: '#84ab70' }}
               >
                 Delete Review
               </button>

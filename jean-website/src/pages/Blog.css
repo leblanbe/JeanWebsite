@@ -33,6 +33,7 @@
   box-sizing: border-box;
   gap: 20px;
   flex-wrap: wrap; /* optional: wrap on smaller screens */
+  background-color: var(--light-color);
 }
 
 /* Full-width search bar */
@@ -112,6 +113,7 @@
   padding: 10px 20px;
   justify-content: start;      /* align grid to the left */
   padding-bottom: 80px;
+  background-color: var(--light-color);
 }
 
 /* Each article card */
@@ -141,4 +143,56 @@
 .article-summary {
   font-family: 'Crimson Text', serif;
   color: var(--text-color);
+}
+
+.section-contact {
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  background-image: url('../assets/botanicalbackground.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 40vh;
+  gap: 10px;
+  color: white;
+  font-size: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden; /* hides anything outside the curve */
+}
+
+/* Dark overlay for better text visibility */
+.section-contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.section-contact::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 90px; /* arch height */
+  background-color: var(--light-color);
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  z-index: 1;
+}
+
+/* Keep your text and button above overlays */
+.section-contact > * {
+  position: relative;
+  z-index: 2;
 }

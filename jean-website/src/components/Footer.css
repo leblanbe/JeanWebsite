@@ -1,41 +1,98 @@
-
-.section-footer{
-  font-family: 'Crimson Text', serif; /* App font */
+.section-footer {
+  position: relative; /* Needed to position the overlay */
+  font-family: 'Crimson Text', serif;
   font-size: 1.1rem;
   padding: 30px 30px;
+  background-image: url('../assets/plantborder.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  z-index: 1; /* keeps text above overlay */
+}
+
+/* Overlay layer */
+.section-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* darker overlay */
+  z-index: 0; /* behind text */
+}
+
+/* Make sure content stays on top of overlay */
+.section-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keeps logo + name/title side by side */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Groups logo/text and icons together vertically */
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  width: 7vw;
+  height: auto;
 }
 
 .social-media {
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  margin-top: 20px;
-  margin-left: 20px;         /* distance from logo */
-  width: fit-content;        /* box hugs the icon */
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
 }
 
 .social-media-icon {
   width: 1.6vw;
   height: 1.6vw;
-  margin-right: 10px;
 }
 
-.vertical-list{
+.vertical-list {
   display: flex;
-  flex-direction: column;   /* stack items vertically */
-  text-align: left;         /* left-align text inside */
+  flex-direction: column;
+  text-align: left;
   padding: 30px 20px;
   text-decoration: none;
-  color:#3f332b
+  min-width: 150px;
 }
 
 .vertical-list a {
-  text-decoration: none;  /* removes underline */
-  color: inherit;         /* makes links use surrounding text color */
+  text-decoration: none;
+  color: inherit;
 }
 
-.vertical-list-item{
+.vertical-list-item {
   margin-top: 10px;
   margin-left: 10px;
-  color:#847062;
+  color: var(--light-color);
   font-size: 1rem;
+}
+
+.footer-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--light-color);
+}
+
+.footer-logo-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9rem;
+  color: var(--light-color);
 }
