@@ -2,8 +2,7 @@
   --primary-color: #0a4f16;
   --accent-color: #70ab7d;
   --light-color: #DDD5C6;
-  --text-color: #9c8372;
-  --brown-color: #917a6b;
+  --text-color: #847062;
 }
 
 .box-main {
@@ -44,11 +43,14 @@
 .h1-medium {
   font-size: 20px;
   font-family:  'Cormorant Garamond', serif;
+  color: black;
+  padding-bottom: -10px;
 }
 
 .text-small {
    font-family: 'Crimson Text', serif;
     font-size: 18px;
+    color: var(--text-color);
 }
 
 .section {
@@ -58,13 +60,17 @@
 }
 
 .center-text {
-  display: flex;
-  justify-content: center;  /* centers horizontally */
-  align-items: center;      /* centers vertically */
-  text-align: center;       /* centers text inside */
-  background-color: white;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    flex-direction: column;         /* stack items vertically */
+    justify-content: center;        /* vertical centering */
+    align-items: center;            /* horizontal centering */
+    text-align: center;             /* center text inside each element */
+    width: 95%;
+    height:auto;
+    gap: 10px;                      /* space between heading and paragraph */
+    color: white;                   /* default text color */
+    font-size: 1.5rem;
+    padding-bottom: 50px;
 }
 
 .center-text h1 {

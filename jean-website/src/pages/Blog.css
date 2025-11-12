@@ -29,7 +29,7 @@
   justify-content: space-between; /* space between search, filters, and create review */
   align-items: center;
   width: 100%;
-  padding: 20px 50px; /* spacing from edges */
+  padding: 30px 50px; /* spacing from edges */
   box-sizing: border-box;
   gap: 20px;
   flex-wrap: wrap; /* optional: wrap on smaller screens */
@@ -44,6 +44,7 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-family: 'Crimson Text', serif;
 }
 
 /* Filters on the right */
@@ -60,6 +61,7 @@
   background-color: var(--primary-color);
   color: white;
   transition: background-color 0.3s;
+  font-family: 'Crimson Text', serif;
 }
 
 .filters-fullwidth button:hover {
@@ -109,6 +111,7 @@
   gap: 30px;                  /* space between cards */
   padding: 10px 20px;
   justify-content: start;      /* align grid to the left */
+  padding-bottom: 80px;
 }
 
 /* Each article card */

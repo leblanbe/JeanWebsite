@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import './Blog.css';
 import '../App.css';
 
@@ -101,6 +102,10 @@ function Blog({ loggedInUser }) {
 
   return (
     <>
+    <section className="center-text">
+        <h1 className="h1-medium">Articles & Insights</h1>
+        <p className="text-small"> Explore a curated collection of scholarly articles and theatrical insights delving into the works of William Shakespeare. From character analysis to performance interpretation, discover new perspectives on the Bard's timeless legacy.</p>
+    </section>
       <section className="blog-controls-fullwidth">
         {/* Create Review Button */}
         {loggedInUser === "jean.feerick@gmail.com" && (
@@ -203,6 +208,7 @@ function Blog({ loggedInUser }) {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }
