@@ -119,19 +119,12 @@ function Blog({ loggedInUser }) {
         />
 
         {/* Filters */}
-        <div className="filters-fullwidth">
-          <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
-            <option value="">All Types</option>
-            {uniqueTypes.map(type => <option key={type} value={type}>{type}</option>)}
-          </select>
-          <select value={filterAuthor} onChange={(e) => setFilterAuthor(e.target.value)}>
-            <option value="">All Authors</option>
-            {uniqueAuthors.map(author => <option key={author} value={author}>{author}</option>)}
-          </select>
-          <select value={filterDate} onChange={(e) => setFilterDate(e.target.value)}>
-            <option value="">All Dates</option>
-            {uniqueDates.map(date => <option key={date} value={date}>{date}</option>)}
-          </select>
+    <div className="filters-fullwidth">
+          <button onClick={() => setFilterType('')}>All</button>
+          <button onClick={() => setFilterType('Article')}>Article</button>
+          <button onClick={() => setFilterType('Book')}>Book</button>
+          <button onClick={() => setFilterType('Film')}>Film</button>
+          <button onClick={() => setFilterType('Play')}>Play</button>
         </div>
       </section>
 
