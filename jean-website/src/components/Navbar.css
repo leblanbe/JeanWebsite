@@ -13,12 +13,13 @@
 }
 
 .background {
-    background: rgb(255, 255, 255);
+    background: var(--light-color);
     background-blend-mode: darken;
     background-size: cover;
 }
 
 .logo-img {
+    margin-left: 20px;
     width: 60px;          /* fixed width */
     height: 60px;         /* same as width for circle */
     min-width: 50px;      /* optional for small screens */

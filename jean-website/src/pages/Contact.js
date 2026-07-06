@@ -6,11 +6,10 @@ import '../App.css';
 function Contact() {
   return (
     <>
-      <Navbar />
       <section className="section contact-background">
           <div className="firsthalf">
             <h1 className="text-big">Contact Me</h1>
-            <p className="text-small">Hey there! Feel free to reach out if you have any questions about my experience or want me on your team. My preferred contact method is email.</p>
+            <p className="text-small">Hey there! Feel free to reach out if you have any questions about my experience or research. My preferred contact method is email.</p>
             <p className="text-small">
               Email: jean.feerick@gmail.com<br />
             </p>

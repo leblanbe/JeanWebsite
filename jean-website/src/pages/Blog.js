@@ -14,7 +14,8 @@ const initialArticles = [
     date: '2023-10-01',
     title: 'Shakespeare in Modern Theatre',
     summary: 'An exploration of how Shakespeare’s plays are interpreted in contemporary performances.',
-    link: 'https://example.com/shakespeare-article'
+    link: 'https://example.com/shakespeare-article',
+    attachments: []
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const initialArticles = [
     date: '2021-07-15',
     title: 'Hamlet: A Critical Analysis',
     summary: 'A detailed study of Hamlet’s themes, character development, and influence on modern literature.',
-    link: 'https://example.com/hamlet-book'
+    link: 'https://example.com/hamlet-book',
+    attachments: []
   }
 ];
 
@@ -39,14 +41,26 @@ function Blog({ loggedInUser }) {
   const [filterAuthor, setFilterAuthor] = useState('');
   const [filterDate, setFilterDate] = useState('');
   const [showCreateForm, setShowCreateForm] = useState(false);
+  const [editingArticleId, setEditingArticleId] = useState(null);
+  const [editArticle, setEditArticle] = useState({
+    type: '',
+    title: '',
+    summary: '',
+    link: '',
+    author: '',
+    date: '',
+    attachments: []
+  });
   const [newArticle, setNewArticle] = useState({
     type: '',
     title: '',
     summary: '',
     link: '',
     author: '',
-    date: ''
+    date: '',
+    attachments: []
   });
+  const [isDraggingVideo, setIsDraggingVideo] = useState(false);
 
   // Save to localStorage whenever articles change
   useEffect(() => {
@@ -87,11 +101,12 @@ function Blog({ loggedInUser }) {
       date: newArticle.date,
       title: newArticle.title,
       summary: newArticle.summary,
-      link: newArticle.link
+      link: newArticle.link,
+      attachments: newArticle.attachments || []
     };
     setArticles([articleToAdd, ...articles]);
     setShowCreateForm(false);
-    setNewArticle({ type: '', title: '', summary: '', link: '', author: '', date: '' });
+    setNewArticle({ type: '', title: '', summary: '', link: '', author: '', date: '', attachments: [] });
   };
 
   // Delete article
@@ -99,6 +114,79 @@ function Blog({ loggedInUser }) {
     if (window.confirm("Are you sure you want to delete this review?")) {
       setArticles(prev => prev.filter(article => article.id !== id));
     }
+  };
+
+  const handleEditClick = (article) => {
+    setEditingArticleId(article.id);
+    setEditArticle({
+      type: article.type,
+      title: article.title,
+      summary: article.summary,
+      link: article.link || '',
+      author: article.author,
+      date: article.date,
+      attachments: article.attachments || []
+    });
+  };
+
+  const handleEditInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditArticle(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSaveArticle = (e, articleId) => {
+    e.preventDefault();
+    if (!editArticle.title || !editArticle.summary || !editArticle.type || !editArticle.author || !editArticle.date) {
+      alert("Please fill in all fields: title, summary, type, author, and date.");
+      return;
+    }
+
+    setArticles(prev =>
+      prev.map(article =>
+        article.id === articleId
+          ? { ...article, ...editArticle }
+          : article
+      )
+    );
+    setEditingArticleId(null);
+    setEditArticle({ type: '', title: '', summary: '', link: '', author: '', date: '', attachments: [] });
+  };
+
+  const handleAttachmentChange = (e, articleStateSetter) => {
+    const value = e.target.value;
+    articleStateSetter((prev) => ({ ...prev, attachments: value.split('\n').map((item) => item.trim()).filter(Boolean) }));
+  };
+
+  const handleVideoUpload = (file, articleStateSetter) => {
+    if (!file || !file.type.startsWith('video/')) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      articleStateSetter((prev) => ({
+        ...prev,
+        attachments: [...(prev.attachments || []), reader.result]
+      }));
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  const handleVideoDrop = (event, articleStateSetter) => {
+    event.preventDefault();
+    setIsDraggingVideo(false);
+
+    const droppedFile = event.dataTransfer?.files?.[0];
+    if (!droppedFile || !droppedFile.type.startsWith('video/')) return;
+
+    handleVideoUpload(droppedFile, articleStateSetter);
+  };
+
+  const handleVideoInputChange = (event, articleStateSetter) => {
+    const selectedFile = event.target.files?.[0];
+    if (!selectedFile || !selectedFile.type.startsWith('video/')) return;
+
+    handleVideoUpload(selectedFile, articleStateSetter);
+    event.target.value = '';
   };
 
   return (
@@ -141,6 +229,7 @@ function Blog({ loggedInUser }) {
           <button onClick={() => setFilterType('Book')}>Book</button>
           <button onClick={() => setFilterType('Film')}>Film</button>
           <button onClick={() => setFilterType('Play')}>Play</button>
+          <button onClick={() => setFilterType('Video')}>Video</button>
         </div>
       </section>
 
@@ -188,6 +277,29 @@ function Blog({ loggedInUser }) {
             value={newArticle.link}
             onChange={handleInputChange}
           />
+          <label
+            className={`video-drop-zone ${isDraggingVideo ? 'dragging' : ''}`}
+            onDragOver={(event) => {
+              event.preventDefault();
+              setIsDraggingVideo(true);
+            }}
+            onDragLeave={() => setIsDraggingVideo(false)}
+            onDrop={(event) => handleVideoDrop(event, setNewArticle)}
+          >
+            <span>Drag and drop a video here</span>
+            <input
+              type="file"
+              accept="video/*"
+              onChange={(event) => handleVideoInputChange(event, setNewArticle)}
+            />
+          </label>
+          {(newArticle.attachments || []).length > 0 && (
+            <div className="attachment-preview-list">
+              {newArticle.attachments.map((attachment, index) => (
+                <span key={`${attachment}-${index}`} className="attachment-chip">Video {index + 1}</span>
+              ))}
+            </div>
+          )}
           <button type="submit" className="btn-blog">Add Review</button>
         </form>
       )}
@@ -200,11 +312,59 @@ function Blog({ loggedInUser }) {
               {article.type} | {article.author} | {article.date}
             </div>
             <h2 className="article-title">{article.title}</h2>
-            <p className="article-summary">{article.summary}</p>
-            {article.link && (
-              <a href={article.link} target="_blank" rel="noopener noreferrer" className="btn-blog">
-                Read More
-              </a>
+            <Link to={`/blog/${article.id}`} className="btn-blog">
+              Read More
+            </Link>
+            {loggedInUser === "jean.feerick@gmail.com" && (
+              <>
+                {editingArticleId === article.id ? (
+                  <form className="create-review-form" onSubmit={(e) => handleSaveArticle(e, article.id)}>
+                    <input name="title" value={editArticle.title} onChange={handleEditInputChange} placeholder="Title" />
+                    <input name="type" value={editArticle.type} onChange={handleEditInputChange} placeholder="Type" />
+                    <input name="author" value={editArticle.author} onChange={handleEditInputChange} placeholder="Author" />
+                    <input name="date" type="date" value={editArticle.date} onChange={handleEditInputChange} />
+                    <textarea name="summary" value={editArticle.summary} onChange={handleEditInputChange} placeholder="Summary / Review" />
+                    <input name="link" value={editArticle.link} onChange={handleEditInputChange} placeholder="Link (optional)" />
+                    <label
+                      className={`video-drop-zone ${isDraggingVideo ? 'dragging' : ''}`}
+                      onDragOver={(event) => {
+                        event.preventDefault();
+                        setIsDraggingVideo(true);
+                      }}
+                      onDragLeave={() => setIsDraggingVideo(false)}
+                      onDrop={(event) => handleVideoDrop(event, setEditArticle)}
+                    >
+                      <span>Drag and drop a video here</span>
+                      <input
+                        type="file"
+                        accept="video/*"
+                        onChange={(event) => handleVideoInputChange(event, setEditArticle)}
+                      />
+                    </label>
+                    {(editArticle.attachments || []).length > 0 && (
+                      <div className="attachment-preview-list">
+                        {editArticle.attachments.map((attachment, index) => (
+                          <span key={`${attachment}-${index}`} className="attachment-chip">Video {index + 1}</span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="blog-action-row">
+                      <button type="submit" className="btn-blog">Save</button>
+                      <button type="button" className="btn-blog" onClick={() => setEditingArticleId(null)}>
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <button
+                    className="btn-blog"
+                    onClick={() => handleEditClick(article)}
+                    style={{ marginTop: '10px', backgroundColor: '#84ab70' }}
+                  >
+                    Edit Review
+                  </button>
+                )}
+              </>
             )}
             {/* Delete Review Button */}
             {loggedInUser && (
