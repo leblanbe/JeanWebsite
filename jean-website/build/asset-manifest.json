@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.8cd341cf.css",
-    "main.js": "/static/js/main.c18b9b8d.js",
-    "static/js/453.fd4d4eff.chunk.js": "/static/js/453.fd4d4eff.chunk.js",
-    "static/media/websitelogo.png": "/static/media/websitelogo.eb4c4e0130ca1c97c90b.png",
-    "static/media/gentlekatherine.png": "/static/media/gentlekatherine.1751232e4e96dd15084d.png",
-    "static/media/plantborder.png": "/static/media/plantborder.db0d97f8da08bd053082.png",
-    "static/media/oxford_photo3.jpg": "/static/media/oxford_photo3.d61f5bf16106f1357b39.jpg",
-    "static/media/botanicalbackground.png": "/static/media/botanicalbackground.a3339b07234842c620e1.png",
-    "static/media/oxford_photo1.jpg": "/static/media/oxford_photo1.e9df0624c8e8f407f6ea.jpg",
-    "static/media/vintage-paper-flowers.png": "/static/media/vintage-paper-flowers.2b1c2cb30518e9c9f042.png",
-    "static/media/linkedin.png": "/static/media/linkedin.f249b38224ca41a0b909.png",
-    "index.html": "/index.html",
-    "main.8cd341cf.css.map": "/static/css/main.8cd341cf.css.map",
-    "main.c18b9b8d.js.map": "/static/js/main.c18b9b8d.js.map",
-    "453.fd4d4eff.chunk.js.map": "/static/js/453.fd4d4eff.chunk.js.map"
+    "main.css": "./static/css/main.f2908a9f.css",
+    "main.js": "./static/js/main.d94da38b.js",
+    "static/js/453.fd4d4eff.chunk.js": "./static/js/453.fd4d4eff.chunk.js",
+    "static/media/websitelogo.png": "./static/media/websitelogo.eb4c4e0130ca1c97c90b.png",
+    "static/media/gentlekatherine.png": "./static/media/gentlekatherine.1751232e4e96dd15084d.png",
+    "static/media/plantborder.png": "./static/media/plantborder.db0d97f8da08bd053082.png",
+    "static/media/oxford_photo3.jpg": "./static/media/oxford_photo3.d61f5bf16106f1357b39.jpg",
+    "static/media/botanicalbackground.png": "./static/media/botanicalbackground.a3339b07234842c620e1.png",
+    "static/media/oxford_photo1.jpg": "./static/media/oxford_photo1.e9df0624c8e8f407f6ea.jpg",
+    "static/media/vintage-paper-flowers.png": "./static/media/vintage-paper-flowers.2b1c2cb30518e9c9f042.png",
+    "static/media/linkedin.png": "./static/media/linkedin.f249b38224ca41a0b909.png",
+    "index.html": "./index.html",
+    "main.f2908a9f.css.map": "./static/css/main.f2908a9f.css.map",
+    "main.d94da38b.js.map": "./static/js/main.d94da38b.js.map",
+    "453.fd4d4eff.chunk.js.map": "./static/js/453.fd4d4eff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cd341cf.css",
-    "static/js/main.c18b9b8d.js"
+    "static/css/main.f2908a9f.css",
+    "static/js/main.d94da38b.js"
   ]
 }
