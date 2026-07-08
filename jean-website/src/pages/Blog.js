@@ -5,30 +5,6 @@ import { Link } from 'react-router-dom';
 import './Blog.css';
 import '../App.css';
 
-// Initial articles
-const initialArticles = [
-  {
-    id: 1,
-    type: 'Article',
-    author: 'Jean Feerick',
-    date: '2023-10-01',
-    title: 'Shakespeare in Modern Theatre',
-    summary: 'An exploration of how Shakespeare’s plays are interpreted in contemporary performances.',
-    link: 'https://example.com/shakespeare-article',
-    attachments: []
-  },
-  {
-    id: 2,
-    type: 'Book',
-    author: 'William Smith',
-    date: '2021-07-15',
-    title: 'Hamlet: A Critical Analysis',
-    summary: 'A detailed study of Hamlet’s themes, character development, and influence on modern literature.',
-    link: 'https://example.com/hamlet-book',
-    attachments: []
-  }
-];
-
 function Blog({ loggedInUser }) {
   // Load from localStorage if available
   const [articles, setArticles] = useState(() => {
@@ -230,6 +206,7 @@ function Blog({ loggedInUser }) {
           <button onClick={() => setFilterType('Film')}>Film</button>
           <button onClick={() => setFilterType('Play')}>Play</button>
           <button onClick={() => setFilterType('Video')}>Video</button>
+          <button onClick={() => setFilterType('Interview')}>Interview</button>
         </div>
       </section>
 
@@ -246,7 +223,7 @@ function Blog({ loggedInUser }) {
           <input
             type="text"
             name="type"
-            placeholder="Type (Article, Book, Film, Play)"
+            placeholder="Type (Article, Book, Film, Play, Video, Interview)"
             value={newArticle.type}
             onChange={handleInputChange}
           />

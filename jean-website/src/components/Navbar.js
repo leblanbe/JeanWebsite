@@ -33,7 +33,7 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
           <div className="logo-container">
             <img src={logo} alt="Logo" className="logo-img" />
             <div className="logo-text">
-              <div className="logo-name">Jean Feerick</div>
+              <div className="logo-name"> Dr.Jean Feerick</div>
               <div className="logo-title">Shakespearean Scholar</div>
             </div>
           </div>

@@ -33,9 +33,9 @@ function Home() {
       </section>
       <section className="center-text">
       <div>
-        <h1 className="about-title">About Jean Feerick</h1>
+        <h1 className="about-title">About Dr.Jean Feerick</h1>
         <p className="about-subtitle">
-          Scholar, Performer, and Passionate Advocate for the Bard
+          Scholar, Professor, and Passionate Advocate for the Bard
         </p>
       </div>
     </section>
@@ -43,13 +43,13 @@ function Home() {
     <section className="section-about">
       <div className="firsthalf">
       <p className="home-body">
-        Jean Feerick is a dedicated Shakespearean scholar with over two decades of experience in literary analysis, theatrical performance, and academic research. Her work bridges the gap between classical interpretation and modern understanding, bringing Shakespeare's timeless themes to contemporary audiences.
+        Jean Feerick is a dedicated Shakespearean scholar with over two decades of experience in literary analysis, teaching, playgoing, editing, and academic research. Her work bridges the gap between classical interpretation and modern understanding, bringing Shakespeare's timeless themes to contemporary audiences.
       </p>
       <p className="home-body">
-          Through rigorous scholarship and passionate engagement with the text, Jean has developed a unique perspective on Shakespeare's plays, sonnets, and their enduring relevance. Her insights have been featured in academic journals, theatrical productions, and literary conferences worldwide.
+          Through rigorous scholarship and passionate engagement with the text, Jean has developed a unique perspective on Shakespeare's plays, sonnets, and their enduring relevance. Her insights have been featured in academic journals, blogs, and literary conferences worldwide.
       </p>
       <p className="home-body">
-        This portal serves as a gathering place for Jean's articles, reflections, and ongoing dialogue with fellow enthusiasts of Shakespeare's extraordinary body of work.
+        This portal serves as a gathering place for Jean's articles, reflections, reviews, and ongoing dialogue with fellow enthusiasts of Shakespeare's extraordinary body of work and its many modern adaptations.
       </p>
       </div>
       <div className="secondhalf">
