@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './Blog.css';
 import '../App.css';
 
+// Initial articles
+const initialArticles = [
+];
+
 function Blog({ loggedInUser }) {
   // Load from localStorage if available
   const [articles, setArticles] = useState(() => {
