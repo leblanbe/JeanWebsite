@@ -5,6 +5,7 @@ import logo from '../assets/websitelogo.png';
 
 function Navbar({ loggedInUser, setLoggedInUser }) {
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -38,6 +39,15 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
           </div>
         </div>
 
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={mobileMenuOpen}
+        >
+          ☰
+        </button>
+
         <ul className="nav-list">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/gallery">Gallery</Link></li>
@@ -51,6 +61,33 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
             )}
           </li>
         </ul>
+
+        {mobileMenuOpen && (
+          <div className="mobile-menu-backdrop" onClick={() => setMobileMenuOpen(false)} />
+        )}
+
+        <div className={`mobile-menu-panel ${mobileMenuOpen ? 'open' : ''}`}>
+          <button
+            className="mobile-menu-close"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close navigation"
+          >
+            ×
+          </button>
+          <ul className="mobile-nav-list">
+            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</Link></li>
+            <li><Link to="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link></li>
+            <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+            <li>
+              {loggedInUser ? (
+                <button className="login-btn" onClick={() => { handleLogout(); setMobileMenuOpen(false); }}>Log out</button>
+              ) : (
+                <button className="login-btn" onClick={() => { setShowLoginModal(true); setMobileMenuOpen(false); }}>Login</button>
+              )}
+            </li>
+          </ul>
+        </div>
       </nav>
 
       {showLoginModal && (

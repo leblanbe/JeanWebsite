@@ -2,170 +2,216 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 80vh;                  
-  padding-top: 80px;
-  padding-left: 50px;
+  min-height: min(80vh, 760px);
+  padding: clamp(24px, 5vw, 80px) clamp(20px, 4vw, 50px);
   background-image: url('../assets/vintage-paper-flowers.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  gap: clamp(24px, 4vw, 48px);
+  width: 100%;
 }
 
-/* Fade overlay: image -> var(--light-color) from right to left */
 .section.background::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-    background: linear-gradient(to left, rgba(255,255,255,0) 10%, var(--light-color) 80%);
+  inset: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, var(--light-color) 80%);
   z-index: 1;
 }
 
 .firsthalf {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
+  width: min(100%, 560px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
 }
 
 .secondhalf {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
+  width: min(100%, 560px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
 }
 
 .first34 {
-    width: 70vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
+  width: min(100%, 720px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
 }
 
-/* Main title styling */
 .home-title {
-    font-family: 'Cormorant Garamond', serif; /* App Secondary */
-    font-size: 4.5rem;                        /* adjust as needed */
-    color: var(--primary-color);
-    margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.1;
 }
 
-/* Body text styling */
 .home-body {
-    font-family: 'Crimson Text', serif;       /* App font */
-    color: #2E251F;
-    font-size: 1.1rem;
-    line-height: 1.6;                         /* good readability */
-    margin-top: 15px;
-    margin-right: 40px;
+  font-family: 'Crimson Text', serif;
+  color: #2E251F;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  margin-top: 15px;
+  margin-right: 0;
+  align-items:center;
 }
 
-/* Blog button */
+.home-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .btn-blog {
-    display: inline-block;
-    margin-top: 25px;
-    margin-right: 20px;
-    padding: 12px 15px;
-    background-color: var(--primary-color); /* Sage Green */
-    color: white;
-    font-size: 1rem;
-    font-family:  'Crimson Text', serif;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: auto;
-    text-align: center;
-}
-
-.btn-blog:hover {
-    background-color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 12px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+  font-family: 'Crimson Text', serif;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+  text-align: center;
 }
 
 .btn-contact {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 15px;
-    color: black;
-    font-size: 1rem;
-    font-family: 'Crimson Text', serif;
-    border: 1px solid var(--primary-color);  /* <-- this sets color and width together */
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: auto;
-    text-align: center;
+  display: inline-block;
+  margin: 0;
+  padding: 12px 16px;
+  color: black;
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+  font-family: 'Crimson Text', serif;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+  text-align: center;
 }
 
 .center-text {
   display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;       /* centers vertically */
-  text-align: center;        /* centers text inside */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  padding: 40px 20px 0px;        /* spacing top and bottom */
-  background-color: var(--light-color); /* white background instead of black for readability */
+  padding: clamp(32px, 5vw, 56px) 20px 0;
+  background-color: var(--light-color);
 }
 
-/* Main header */
 .about-title {
-  font-family: 'Cormorant Garamond', serif; /* App Secondary */
-  font-size: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 500;
   color: #000000;
   margin: 0;
 }
 
-/* Subtitle / small text */
 .about-subtitle {
-  font-family: 'Crimson Text', serif; /* App font */
-  font-size: 1.1rem;
+  font-family: 'Crimson Text', serif;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
   color: #847062;
   margin-top: 10px;
   line-height: 1.4;
 }
 
 .katherine-img {
-  width: 30vw;
+  width: min(100%, 30rem);
+  height: auto;
 }
 
 .section-about {
-    display: flex;               /* make children sit side by side */
-    flex-direction: row;         /* horizontal alignment */
-    justify-content: space-between; /* optional: spread out */
-    align-items: flex-start;     /* align to top of container */
-    padding-bottom: 100px;           /* optional spacing */
-    gap: 40px;                   /* space between text and image */
-    align-items: center;
-    background-color: var(--light-color);
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 50px) 100px;
+  gap: clamp(24px, 4vw, 48px);
+  background-color: var(--light-color);
 }
 
 .section-about .firsthalf,
 .section-about .secondhalf {
-    flex: 1;                     /* each takes half the width */
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-
-.white{
+.white {
   color: white;
 }
 
-.tan{
+.tan {
   background-color: var(--light-color);
 }
 
-.primary{
+.primary {
   background-color: var(--primary-color);
   color: var(--light-color);
+}
+
+@media (max-width: 900px) {
+  .section.background,
+  .section-about {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .firsthalf,
+  .secondhalf,
+  .first34 {
+    width: 100%;
+  }
+
+  .katherine-img {
+    width: min(100%, 22rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .section.background {
+    padding: 96px 20px 40px;
+    min-height: auto;
+  }
+
+  .home-title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .home-body {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-blog,
+  .btn-contact {
+    width: 80%;
+  }
+
+  .section-about {
+    padding: 24px 20px 60px;
+  }
+
+  .center-text {
+    padding-top: clamp(24px, 6vw, 36px);
+  }
 }

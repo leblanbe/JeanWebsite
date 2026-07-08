@@ -53,7 +53,7 @@ function Home() {
       </p>
       </div>
       <div className="secondhalf">
-            <img src={PlayImage} className="katherine-img" />
+            <img src={PlayImage} className="katherine-img" alt="Jean Feerick" />
       </div>
     </section>
     <Footer />
