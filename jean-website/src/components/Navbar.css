@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   top: 0;
-  padding: 0 clamp(8px, 2vw, 16px);
+  padding: 0 clamp(6px, 2vw, 12px);
   background-color: var(--light-color);
   z-index: 1000;
   position: relative;
+  width:100%;
 }
 
 .navbar-left {
@@ -88,7 +89,7 @@
 }
 
 .nav-list li a {
-  text-decoration: none;
+  padding-left: clamp(8px, 2vw, 20px);
   color: #000;
   font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
@@ -183,6 +184,7 @@
     justify-content: space-between;
     padding: 8px clamp(6px, 2vw, 10px);
     gap: 8px;
+    width:100%
   }
 
   .logo-container {

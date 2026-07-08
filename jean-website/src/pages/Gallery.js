@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Oxford1 from '../assets/oxford_photo1.jpg';
 import Oxford2 from '../assets/oxford_photo3.jpg';
+import Footer from '../components/Footer';
 import './Gallery.css';
 import '../App.css';
 
@@ -383,6 +384,7 @@ function Gallery({ loggedInUser }) {
           );
         })}
       </section>
+      <Footer />
     </>
   );
 }
